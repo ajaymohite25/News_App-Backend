@@ -1,0 +1,29 @@
+.myHomeCard {
+  border-style: solid;
+  border-color: royalblue;
+  border-width: 1px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  height: 30rem;
+  width: 100%;
+  min-width: 35vw;
+}
+.myHomeCardImg {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: 45%;
+  border-bottom: solid 2px lightgrey;
+}
+.myHomeCardItems {
+  padding: 1rem;
+  padding-top: 1rem;
+}
+@media (max-width: 1000px) {
+  .myHomeCard {
+    width: 90%;
+    margin: auto;
+  }
+}

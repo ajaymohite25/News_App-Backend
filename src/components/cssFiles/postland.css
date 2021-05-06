@@ -1,0 +1,20 @@
+.landDataForm {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 3rem;
+}
+.inputformland {
+  margin-top: 1rem;
+}
+.submitButton {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 850px) {
+  .landDataForm {
+    width: 80%;
+  }
+}
