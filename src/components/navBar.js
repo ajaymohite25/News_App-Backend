@@ -19,8 +19,8 @@ function NavBar(props) {
   };
 
   return (
-    <nav class="navbar navbar-light bg-light customNavbar">
-      <span class="navbar-brand mb-0 h1">
+    <nav className="navbar navbar-light bg-light customNavbar">
+      <span className="navbar-brand mb-0 h1">
         <Link
           style={{
             textDecoration: "none",

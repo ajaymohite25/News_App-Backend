@@ -87,22 +87,20 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="App">
       {isLoaded ? (
-        <div className="App">
-          <Router>
-            <NavBar />
-            <Route path="/" exact component={Home} />
-            <Route path="/signin" exact component={Signin} />
-            <Route path="/postland" exact component={PostLand} />
-            <Route path="/lands" exact component={MyLand} />
-            <Route path="/404" exact component={Page404} />
-          </Router>
-        </div>
+        <Router>
+          <NavBar />
+          <Route path="/" exact component={Home} />
+          <Route path="/signin" exact component={Signin} />
+          <Route path="/postland" exact component={PostLand} />
+          <Route path="/lands" exact component={MyLand} />
+          <Route path="/404" exact component={Page404} />
+        </Router>
       ) : (
         <FullScreenSpinner />
       )}
-    </>
+    </div>
   );
 }
 

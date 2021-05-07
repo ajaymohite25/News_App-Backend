@@ -63,7 +63,6 @@ function MyLandCard(props) {
         <p style={{ color: "red", padding: "2px", margin: "2px" }}>{message}</p>
         <p className="mylandCardItem mylandCardItemName">
           <span className="mylandcardname">
-            {" "}
             Name of Land:{props.landDetail.name}
           </span>
           <span>

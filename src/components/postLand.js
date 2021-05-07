@@ -2,15 +2,17 @@ import React, { useRef, useState } from "react";
 import "./cssFiles/postland.css";
 import axios from "../axios";
 import store from "../redux/store";
+import Spinner from "react-spinkit";
 
 function PostLand() {
   const formPostref = useRef();
   const [message, setMessage] = useState("");
   const [colour, setColour] = useState("green");
+  const [onformSubmit, setSubmit] = useState(false);
 
   function onPost(e) {
     e.preventDefault();
-
+    setSubmit(true);
     let formData = new FormData(formPostref.current);
     axios({
       url: `/user/post/${store.getState().auth.objId}`,
@@ -24,6 +26,7 @@ function PostLand() {
           setTimeout(() => {
             setMessage("");
           }, 3000);
+          setSubmit(false);
         }
       })
       .catch((err) => {
@@ -32,6 +35,7 @@ function PostLand() {
         setTimeout(() => {
           setMessage("");
         }, 3000);
+        setSubmit(false);
       });
   }
 
@@ -107,9 +111,18 @@ function PostLand() {
           name="landImg"
         />
       </div>
-      <button type="submit" className="btn btn-primary submitButton">
-        Submit
-      </button>
+      {onformSubmit ? (
+        <button type="submit" className="btn btn-primary submitButton">
+          <span>
+            <Spinner style={{ color: "black" }} />
+          </span>
+          <span>Submiting...</span>
+        </button>
+      ) : (
+        <button type="submit" className="btn btn-primary submitButton">
+          <span>Submit</span>
+        </button>
+      )}
     </form>
   );
 }

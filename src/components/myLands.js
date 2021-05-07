@@ -40,7 +40,7 @@ function MyLand() {
   }
 
   return (
-    <>
+    <div>
       {isLoaded ? (
         <div className="mylands">
           {myLands.length ? (
@@ -61,7 +61,7 @@ function MyLand() {
       ) : (
         <Spinner />
       )}
-    </>
+    </div>
   );
 }
 
